@@ -1,5 +1,4 @@
 import pickle
-# from mol_bpe import Tokenizer as PSTokenizer
 from rdkit import Chem
 from abc import abstractmethod
 from graph import get_num_of_heavy_atoms, HyperGraph, HyperNode
@@ -147,7 +146,7 @@ class MergeTokenizer(OverlapTokenizer):
 
 
 if __name__ == '__main__':
-    vocab_path = '/data/yanruqu2/MolBPE/data/lba/vocab_98.pkl'
+    vocab_path = './data/lba/vocab_213.pkl'
     tokenizer = MergeTokenizer(vocab_path)
 
     for idx, (k, v) in enumerate(tokenizer.vocab_dict.items()):

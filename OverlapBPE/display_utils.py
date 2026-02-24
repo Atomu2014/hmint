@@ -54,8 +54,8 @@ def show_2d_smiles_grid(smiles_list, legends=None, molsPerRow=10, subImgSize=(15
 
     img_width, img_height = subImgSize
     mol_images = [Draw.MolToImage(mol, kekulize=False, legend=legend, size=subImgSize) for mol, legend in zip(mols, legends)]
-    rows = (len(mols) + molsPerRow - 1) // molsPerRow  # 总行数
-    cols = molsPerRow  # 每行分子数量
+    rows = (len(mols) + molsPerRow - 1) // molsPerRow
+    cols = molsPerRow 
 
     grid_image = Image.new('RGB', (cols * img_width, rows * img_height))
     for i, img in enumerate(mol_images):
@@ -96,8 +96,8 @@ def display_ring_by_size(ring_counter):
 
 def concat_images_in_grid(images, molsPerRow=10, subImgSize=(150, 150)):
     img_width, img_height = subImgSize
-    rows = (len(images) + molsPerRow - 1) // molsPerRow  # 总行数
-    cols = molsPerRow  # 每行分子数量
+    rows = (len(images) + molsPerRow - 1) // molsPerRow
+    cols = molsPerRow 
 
     grid_image = Image.new('RGB', (cols * img_width, rows * img_height))
     for i, img in enumerate(images):

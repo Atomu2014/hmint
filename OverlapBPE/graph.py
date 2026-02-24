@@ -645,7 +645,7 @@ class HyperGraph(MolGraph):
             concat_images_in_grid(images, molsPerRow=10, subImgSize=(200, 200))
 
 if __name__ == '__main__':
-    prefix = '/data/yanruqu2/MolBPE/data/lba'
+    prefix = './data/lba'
     all_data = pickle.load(open(f'{prefix}/train_mols.pkl', 'rb'))
     for idx, mol in enumerate(all_data):
         smiles = Chem.MolToSmiles(mol)
