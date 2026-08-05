@@ -170,4 +170,7 @@ cython_debug/
 # PyPI configuration file
 .pypirc
 
-**/data/**
+OverlapBPE/data/**
+**/datasets/**
+wandb/**
+logs/**
