@@ -15,6 +15,12 @@ python -c "import rdkit; print(rdkit.__version__)"
 
 #### Binding Affinity Prediction
 
+Prerequisite: preprocessing ``PDBBind`` and ``LBA`` depends on tokenization vocabulary. For your convenience, we provide the vocabulary (built from LBA training set) at ``OverlapBPE/data/lba/vocab_213.pkl``.
+
+```bash
+cp ./OverlapBPE/data/lba/vocab_213.pkl ./data/tokenizer/vocabs/vocab_213.pkl
+```
+
 1. PDBBind Benchmark (established splits, following GET)
 
 Download raw dataset (1.9G).
@@ -42,9 +48,11 @@ tar zxvf ./datasets/LBA/LBA-split-by-sequence-identity-30.tar.gz -C ./datasets/L
 rm ./datasets/LBA/LBA-split-by-sequence-identity-30.tar.gz
 ```
 
-```bash
-cp ./OverlapBPE/data/lba/vocab_213.pkl ./data/tokenizer/vocabs/vocab_213.pkl
-```
+3. Build your own vocabulary from a set of molecules.
+
+We provide a notebook ``OverlapBPE/build_vocab_lba.ipynb`` and ``OverlapBPE/data/lba/train_mols.pkl`` to illustrate the complete process. Simply run all cells to produce the results. See detailed instructions in notebook about how to customize your own vocabulary.
+
+Note: important parameters include: data path, ISOMERIC, MAX_VOCAB_SIZE, min_freq.
 
 ### Experiments
 
